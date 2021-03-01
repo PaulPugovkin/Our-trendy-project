@@ -22,20 +22,32 @@
 }
 
 .problems-svg {
-  position: absolute;
-  bottom: 0;
-  right: -8%;
-  z-index: 0;
-  fill: $dark-color-gray;
+  @media screen and (max-width: 1359px) {
+    display: none;
+  }
+
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    bottom: 0;
+    right: -8%;
+    z-index: 0;
+    fill: $dark-color-gray;
+  }
 }
 
 .problems-svg-bottom {
-  position: absolute;
-  bottom: 0;
-  right: -8%;
-  width: 100%;
-  height: 21%;
-  background-color: $light-color-white;
+  @media screen and (max-width: 1359px) {
+    display: none;
+  }
+
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    bottom: 0;
+    right: -8%;
+    width: 100%;
+    height: 21%;
+    background-color: $light-color-white;
+  }
 }
 
 .problems-wrapper {
