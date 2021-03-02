@@ -381,7 +381,7 @@ body {
   background-color: #ffffff;
   color: #111518;
 }
-body.modal-open {
+body.modal-open, body.modal-consultation {
   overflow: hidden;
 }
 
@@ -651,6 +651,7 @@ header .mobile-container {
   line-height: 1.214;
   letter-spacing: 0.03em;
   color: #b9b9b9;
+  text-transform: uppercase;
 }
 .decktop-navigation-list a:hover, .decktop-navigation-list a:focus {
   color: #ff6b09;
@@ -724,7 +725,6 @@ header .mobile-container {
 
 .backdrop-menu {
   padding: 30px 20px;
-  padding-bottom: auto;
 }
 @media screen and (min-width: 480px) {
   .backdrop-menu {
@@ -749,6 +749,11 @@ header .mobile-container {
 .mobile-navigation {
   padding: 50px 0;
 }
+@media screen and (min-width: 600px) {
+  .mobile-navigation {
+    padding: 25px 0;
+  }
+}
 @media screen and (min-width: 768px) {
   .mobile-navigation {
     display: flex;
@@ -769,6 +774,12 @@ header .mobile-container {
   letter-spacing: 0.03em;
   color: #ffffff;
 }
+@media screen and (min-width: 600px) {
+  .mobile-navigation-list a {
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
 @media screen and (min-width: 768px) {
   .mobile-navigation-list a {
     font-size: 26px;
@@ -778,7 +789,7 @@ header .mobile-container {
 .button-menu-consultation {
   display: flex;
   margin: 0 auto;
-  padding: 16px 5px;
+  padding: 14px 5px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -819,11 +830,27 @@ header .mobile-container {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 90px 20px;
-  background: rgba(17, 21, 24, 0.8);
+  background: rgba(17, 21, 24, 0.9);
   z-index: 999;
-  overflow-y: scroll;
   opacity: 1;
+  padding: 70px 20px;
+}
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  .backdrop-form {
+    padding: 20px 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .backdrop-form {
+    background: rgba(17, 21, 24, 0.8);
+    overflow-y: scroll;
+    padding: 60px 20px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .backdrop-form {
+    padding: 80px 20px;
+  }
 }
 
 .header-modal {
@@ -831,6 +858,12 @@ header .mobile-container {
   background: #fff;
   width: 100%;
   padding: 20px;
+}
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  .header-modal {
+    height: 100%;
+    overflow-y: scroll;
+  }
 }
 @media screen and (min-width: 768px) {
   .header-modal {
@@ -846,22 +879,33 @@ header .mobile-container {
 
 .button-modal-close {
   position: absolute;
-  top: 34px;
+  top: 28px;
   right: 20px;
-  stroke: #111518;
   border: 0;
   padding: 0;
+  stroke: #111518;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .button-modal-close {
+    top: 34px;
+    right: 20px;
+  }
 }
 .button-modal-close:focus, .button-modal-close:hover {
   stroke: #ff6b09;
 }
 
 .decktop-consultation-form {
-  padding: 40px 0;
   display: flex;
   flex-direction: column;
+  padding: 20px 0;
+}
+@media screen and (min-width: 1360px) {
+  .decktop-consultation-form {
+    padding: 40px 0;
+  }
 }
 .decktop-consultation-form h1 {
   margin: 0 auto;
@@ -873,6 +917,14 @@ header .mobile-container {
   line-height: 1.25;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  .decktop-consultation-form h1 {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.307;
+    letter-spacing: 0.03em;
+  }
 }
 @media screen and (min-width: 1360px) {
   .decktop-consultation-form h1 {
@@ -886,7 +938,7 @@ header .mobile-container {
   margin: 0 auto;
   margin-top: 30px;
   min-width: 200px;
-  padding: 16px 5px;
+  padding: 8px 5px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -896,6 +948,16 @@ header .mobile-container {
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
+@media screen and (min-width: 768px) {
+  .decktop-consultation-form .submit {
+    padding: 10px 5px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .decktop-consultation-form .submit {
+    padding: 16px 5px;
+  }
+}
 .decktop-consultation-form .submit:focus, .decktop-consultation-form .submit:hover {
   background: #188ce8;
   border-radius: 4px;
@@ -904,7 +966,7 @@ header .mobile-container {
 
 .form-bar {
   position: relative;
-  margin-top: 40px;
+  margin-top: 25px;
   display: block;
 }
 .form-bar .form-input {
@@ -951,7 +1013,7 @@ header .mobile-container {
   position: relative;
   display: block;
   margin: 0;
-  margin-top: 40px;
+  margin-top: 25px;
 }
 .formbar-textarea .form-textarea {
   margin: 0;
@@ -2593,6 +2655,9 @@ header .mobile-container {
     width: 478px;
     padding: 27px 0 27px 40px;
   }
+}
+.contact input:focus-within:required:invalid {
+  outline: 1px solid red;
 }
 .contact input:focus-within {
   outline: 1px solid #ff6b09;
