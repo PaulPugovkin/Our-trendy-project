@@ -117,21 +117,137 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/menu-mobile.js":[function(require,module,exports) {
+})({"js/header-menu.js":[function(require,module,exports) {
 (function () {
-  var refs = {
-    openModalBtn: document.querySelector('[data-modal-openMenu]'),
-    closeModalBtn: document.querySelector('[data-modal-closeMenu]'),
-    modal: document.querySelector('[data-modal-menu]')
-  };
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  var d = document;
 
-  function toggleModal() {
-    document.body.classList.toggle("modal-open");
-    refs.modal.classList.toggle('is-hidden');
+  function init() {
+    //Links 
+    var programLink = d.getElementById('programLink');
+    var aboutLink = d.getElementById('aboutLink');
+    var how_we_doLink = d.getElementById('how_we_doLink');
+    var contactsLink = d.getElementById('contactsLink'); //Anchors
+
+    var program_scroll = d.getElementById('program_scroll');
+    var about_scroll = d.getElementById('about_scroll');
+    var how_we_do_scroll = d.getElementById('how_we_do_scroll');
+    var contacts_scroll = d.getElementById('contacts_scroll');
+    programLink.addEventListener('click', function (e) {
+      scrollTo(program_scroll, e);
+    }, false);
+    aboutLink.addEventListener('click', function (e) {
+      scrollTo(about_scroll, e);
+    }, false);
+    how_we_doLink.addEventListener('click', function (e) {
+      scrollTo(how_we_do_scroll, e);
+    }, false);
+    contactsLink.addEventListener('click', function (e) {
+      scrollTo(contacts_scroll, e);
+    }, false);
+    contactsLink.addEventListener('click', function (e) {
+      scrollTo(contacts_scroll, e);
+    }, false);
+    contactsLink2.addEventListener('click', function (e) {
+      scrollTo(contacts_scroll, e);
+    }, false);
   }
+
+  var requestAnimFrame = function () {
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+      window.setTimeout(callback, 1000 / 60);
+    };
+  }();
+
+  function scrollTo(to, callback) {
+    var duration = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1500;
+
+    if (isDomElement(to)) {
+      to = to.offsetTop;
+    }
+
+    function move(amount) {
+      // document.scrollingElement.scrollTop = amount; //FIXME Test that
+      document.documentElement.scrollTop = amount;
+      document.body.parentNode.scrollTop = amount;
+      document.body.scrollTop = amount;
+    }
+
+    function position() {
+      return document.documentElement.offsetTop || document.body.parentNode.offsetTop || document.body.offsetTop;
+    }
+
+    var start = position(),
+        change = to - start,
+        currentTime = 0,
+        increment = 20;
+    console.log('start:', start); //DEBUG
+
+    console.log('to:', to); //DEBUG
+
+    console.log('change:', change); //DEBUG
+
+    var animateScroll = function animateScroll() {
+      // increment the time
+      currentTime += increment; // find the value with the quadratic in-out easing function
+
+      var val = Math.easeInOutQuad(currentTime, start, change, duration); // move the document.body
+
+      move(val); // do the animation unless its over
+
+      if (currentTime < duration) {
+        requestAnimFrame(animateScroll);
+      } else {
+        if (callback && typeof callback === 'function') {
+          // the animation is done so lets callback
+          callback();
+        }
+      }
+    };
+
+    animateScroll();
+  }
+
+  init();
 })();
+
+Math.easeInOutQuad = function (t, b, c, d) {
+  t /= d / 2;
+
+  if (t < 1) {
+    return c / 2 * t * t + b;
+  }
+
+  t--;
+  return -c / 2 * (t * (t - 2) - 1) + b;
+};
+
+Math.easeInCubic = function (t, b, c, d) {
+  var tc = (t /= d) * t * t;
+  return b + c * tc;
+};
+
+Math.inOutQuintic = function (t, b, c, d) {
+  var ts = (t /= d) * t,
+      tc = ts * t;
+  return b + c * (6 * tc * ts + -15 * ts * ts + 10 * tc);
+};
+
+function isDomElement(obj) {
+  return obj instanceof Element;
+}
+
+function isMouseEvent(obj) {
+  return obj instanceof MouseEvent;
+}
+
+function findScrollingElement(element) {
+  //FIXME Test this too
+  do {
+    if (element.clientHeight < element.scrollHeight || element.clientWidth < element.scrollWidth) {
+      return element;
+    }
+  } while (element = element.parentNode);
+}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -336,5 +452,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/menu-mobile.js"], null)
-//# sourceMappingURL=/menu-mobile.ae824cde.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/header-menu.js"], null)
+//# sourceMappingURL=/header-menu.e187f57c.js.map
