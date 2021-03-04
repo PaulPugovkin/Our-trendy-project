@@ -1495,21 +1495,28 @@ header .mobile-container {
 }
 
 .how-we-do-link {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: linear-gradient(to right, #ff6b09, #ff6b09 50%, #ffffff 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   height: 100%;
   text-align: center;
   box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.1);
 }
 .how-we-do-link:focus, .how-we-do-link:hover, .how-we-do-link:focus .how-we-do-svg, .how-we-do-link:hover .how-we-do-svg, .how-we-do-link:focus .how-we-do-title, .how-we-do-link:hover .how-we-do-title, .how-we-do-link:focus .how-we-do-position::after, .how-we-do-link:hover .how-we-do-position::after, .how-we-do-link:focus .how-we-do-paragraph, .how-we-do-link:hover .how-we-do-paragraph {
-  background-color: #ff6b09;
   fill: #ffffff;
   color: #ffffff;
+  background-position: 0 100%;
 }
 
 .how-we-do-description-wrapper {
+  width: 100%;
+  height: 100%;
   padding: 30px 4px 10px;
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {
@@ -2203,8 +2210,12 @@ header .mobile-container {
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   background-color: rgba(17, 21, 24, 0.9);
   opacity: 1;
+  overflow-y: auto;
 }
 .backdrop-certificate.is-hidden {
   pointer-events: none;
@@ -2212,42 +2223,23 @@ header .mobile-container {
 }
 
 .certificate-modal {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 4px;
-  width: 267px;
-  height: 377px;
-  background-color: #ff6b09;
-}
-@media screen and (min-width: 480px) {
-  .certificate-modal {
-    width: 400px;
-    height: 563px;
-  }
+  position: relative;
+  margin-top: 10vh;
+  width: 80%;
+  height: auto;
 }
 @media screen and (min-width: 768px) {
   .certificate-modal {
-    width: 484px;
-    height: 682px;
-  }
-}
-@media screen and (min-width: 1360px) {
-  .certificate-modal {
-    width: 667px;
-    height: 939px;
+    width: 400px;
+    height: 566px;
   }
 }
 
 .button-certificate-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  border: 0;
-  padding: 0;
-  stroke: #111518;
-  background-color: rgba(0, 0, 0, 0);
+  top: -22px;
+  right: -22px;
+  stroke: #b9b9b9;
   cursor: pointer;
   transition: stroke 250ms linear 250ms;
 }
