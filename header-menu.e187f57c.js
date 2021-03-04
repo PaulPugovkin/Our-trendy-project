@@ -135,19 +135,28 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     programLink.addEventListener('click', function (e) {
       scrollTo(program_scroll, e);
     }, false);
+    programLink2.addEventListener('click', function (e) {
+      scrollTo(program_scroll, e);
+    }, false);
     aboutLink.addEventListener('click', function (e) {
+      scrollTo(about_scroll, e);
+    }, false);
+    aboutLink2.addEventListener('click', function (e) {
       scrollTo(about_scroll, e);
     }, false);
     how_we_doLink.addEventListener('click', function (e) {
       scrollTo(how_we_do_scroll, e);
     }, false);
-    contactsLink.addEventListener('click', function (e) {
-      scrollTo(contacts_scroll, e);
+    how_we_doLink2.addEventListener('click', function (e) {
+      scrollTo(how_we_do_scroll, e);
     }, false);
     contactsLink.addEventListener('click', function (e) {
       scrollTo(contacts_scroll, e);
     }, false);
     contactsLink2.addEventListener('click', function (e) {
+      scrollTo(contacts_scroll, e);
+    }, false);
+    contactsLink3.addEventListener('click', function (e) {
       scrollTo(contacts_scroll, e);
     }, false);
   }
@@ -276,7 +285,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65453" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
