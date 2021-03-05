@@ -124,8 +124,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     closeModalBtn: document.querySelector('[data-modal-closeMenu]'),
     modal: document.querySelector('[data-modal-menu]')
   };
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  refs.openModalBtn.addEventListener('click', toggleModal); // refs.closeModalBtn.addEventListener('click', toggleModal);
 
   function toggleModal() {
     document.body.classList.toggle("modal-open");
@@ -161,7 +160,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49960" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61125" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
