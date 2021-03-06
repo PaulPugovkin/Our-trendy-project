@@ -401,7 +401,7 @@ summary {
 }
 
 .icon-upwards {
-  fill: #bb4100;
+  fill: #FF6B09;
   width: 50px;
   height: 50px;
 }
@@ -425,7 +425,7 @@ summary {
 }
 
 .top-arrow:active .icon-upwards {
-  fill: #882f00;
+  fill: #d55500;
 }
 
 @keyframes bounceright {
@@ -561,7 +561,7 @@ img {
 }
 
 .accent {
-  color: #bb4100;
+  color: #FF6B09;
 }
 
 section {
@@ -637,7 +637,7 @@ section {
     font-size: 8px;
     line-height: 1.25;
     letter-spacing: 0.18em;
-    color: #bb4100;
+    color: #FF6B09;
   }
 }
 
@@ -653,7 +653,7 @@ section {
 
 /*--- Цвет лого в меню ---*/
 .logo-orange {
-  color: #bb4100;
+  color: #FF6B09;
 }
 
 header .container {
@@ -724,7 +724,7 @@ header .mobile-container {
   transition: color 300ms linear;
 }
 .decktop-navigation-list a:hover, .decktop-navigation-list a:focus {
-  color: #bb4100;
+  color: #FF6B09;
 }
 
 .button-consultation {
@@ -737,9 +737,9 @@ header .mobile-container {
   text-align: center;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #bb4100;
+  color: #FF6B09;
   background: #ffffff;
-  border: 2px solid #bb4100;
+  border: 2px solid #FF6B09;
   display: none;
   cursor: pointer;
   transition: color, background-color 500ms linear;
@@ -760,7 +760,7 @@ header .mobile-container {
     letter-spacing: 0.14em;
   }
   .button-consultation:focus, .button-consultation:hover {
-    background: #bb4100;
+    background: #FF6B09;
     color: #ffffff;
   }
 }
@@ -871,8 +871,8 @@ header .mobile-container {
   text-align: center;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #bb4100;
-  border: 2px solid #bb4100;
+  color: #FF6B09;
+  border: 2px solid #FF6B09;
   background-color: rgba(0, 0, 0, 0);
 }
 @media screen and (min-width: 768px) {
@@ -956,7 +956,7 @@ header .mobile-container {
   }
 }
 .button-modal-close:focus, .button-modal-close:hover {
-  stroke: #bb4100;
+  stroke: #FF6B09;
 }
 
 .decktop-consultation-form {
@@ -1005,8 +1005,8 @@ header .mobile-container {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
-  color: #bb4100;
-  border: 2px solid #bb4100;
+  color: #FF6B09;
+  border: 2px solid #FF6B09;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
@@ -1021,7 +1021,7 @@ header .mobile-container {
   }
 }
 .decktop-consultation-form .submit:focus, .decktop-consultation-form .submit:hover {
-  background: #bb4100;
+  background: #FF6B09;
   border-radius: 4px;
   color: #ffffff;
 }
@@ -1039,7 +1039,7 @@ header .mobile-container {
   border-radius: 4px;
 }
 .form-bar .form-input:focus {
-  border: 1px solid #bb4100;
+  border: 1px solid #FF6B09;
   outline: 0;
 }
 .form-bar .svg-modal {
@@ -1062,7 +1062,7 @@ header .mobile-container {
 }
 
 .form-input:focus + .svg-modal {
-  fill: #bb4100;
+  fill: #FF6B09;
 }
 
 .form-input:focus ~ .form-text,
@@ -1087,7 +1087,7 @@ header .mobile-container {
   resize: none;
 }
 .formbar-textarea .form-textarea:focus {
-  border: 1px solid #bb4100;
+  border: 1px solid #FF6B09;
   outline: 0;
 }
 .formbar-textarea .text-textarea {
@@ -1209,7 +1209,7 @@ header .mobile-container {
   color: #757575;
 }
 .hero-desc .points {
-  color: #bb4100;
+  color: #FF6B09;
 }
 
 .hero-photo {
@@ -1251,14 +1251,14 @@ header .mobile-container {
   text-align: center;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background-color: #bb4100;
+  background-color: #FF6B09;
   color: #ffffff;
   transition: color, background-color 500ms linear;
 }
 .hero .button:hover, .hero .button:focus {
-  color: #bb4100;
+  color: #FF6B09;
   background-color: #FFFFFF;
-  border: 1px solid #bb4100;
+  border: 1px solid #FF6B09;
 }
 @media screen and (min-width: 768px) {
   .hero .button {
@@ -1393,7 +1393,7 @@ header .mobile-container {
 }
 
 .problems-title-color {
-  color: #bb4100;
+  color: #FF6B09;
 }
 
 .problems-items-container {
@@ -1452,7 +1452,7 @@ header .mobile-container {
   display: inline-flex;
   font-size: 18px;
   line-height: 1.2;
-  color: #bb4100;
+  color: #FF6B09;
 }
 @media screen and (max-width: 767px) {
   .problems-item {
@@ -1488,7 +1488,7 @@ header .mobile-container {
 .problems-item-count::before {
   content: "0" counter(steps);
   display: inline-flex;
-  color: #bb4100;
+  color: #FF6B09;
 }
 
 .problems-item-text {
@@ -1574,7 +1574,7 @@ header .mobile-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(to right, #bb4100, #bb4100 50%, #ffffff 50%);
+  background: linear-gradient(to right, #FF6B09, #FF6B09 50%, #ffffff 50%);
   background-size: 204% 104%;
   background-position: 100%;
   transition: background-position 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1616,11 +1616,11 @@ header .mobile-container {
   font-size: 20px;
   line-height: 1.65;
   letter-spacing: 0.08em;
-  color: #bb4100;
+  color: #FF6B09;
 }
 
 .how-we-do-svg {
-  fill: #bb4100;
+  fill: #FF6B09;
 }
 
 .how-we-do-title {
@@ -1864,7 +1864,7 @@ header .mobile-container {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #bb4100;
+  background-color: #FF6B09;
 }
 @media screen and (max-width: 1359px) {
   .program-item::before {
@@ -1914,7 +1914,7 @@ header .mobile-container {
   font-size: 12px;
   line-height: 1.667;
   text-transform: none;
-  color: #bb4100;
+  color: #FF6B09;
 }
 @media screen and (max-width: 767px) {
   .program-skills-item:not(:last-child) {
@@ -2035,7 +2035,7 @@ header .mobile-container {
 .benefits .benefits-list-wrapper ol li::before {
   content: "— " "0" counter(steps);
   margin-bottom: 10px;
-  color: #bb4100;
+  color: #FF6B09;
 }
 @media screen and (max-width: 767px) {
   .benefits .benefits-list-wrapper ol li:not(:last-child) {
@@ -2180,7 +2180,7 @@ header .mobile-container {
   width: 18px;
   height: 2px;
   display: block;
-  background-color: #bb4100;
+  background-color: #FF6B09;
   left: 0;
   bottom: -21px;
   cursor: pointer;
@@ -2268,7 +2268,7 @@ header .mobile-container {
   font-size: 12px;
   line-height: 1.67;
   letter-spacing: 0.03em;
-  color: #bb4100;
+  color: #FF6B09;
   transition: font-weight 250ms linear 250ms;
   transition: text-decoration 250ms linear 250ms;
 }
@@ -2325,7 +2325,7 @@ header .mobile-container {
   transition: stroke 250ms linear 250ms;
 }
 .button-certificate-close:focus, .button-certificate-close:hover {
-  stroke: #bb4100;
+  stroke: #FF6B09;
 }
 
 .guarantee {
@@ -2580,11 +2580,11 @@ header .mobile-container {
 
 .cuttr__readmore {
   border: none;
-  outline-color: #bb4100;
+  outline-color: #FF6B09;
   padding: 0;
   background-color: transparent;
-  border-bottom: 1px solid #bb4100;
-  color: #bb4100;
+  border-bottom: 1px solid #FF6B09;
+  color: #FF6B09;
   cursor: pointer;
 }
 
@@ -2601,7 +2601,7 @@ header .mobile-container {
   z-index: 1;
   border: none;
   padding: 0;
-  outline-color: #bb4100;
+  outline-color: #FF6B09;
   background-color: transparent;
   width: 40px;
   height: 40px;
@@ -2687,7 +2687,7 @@ header .mobile-container {
 }
 
 .review-second-slider .slick-current {
-  border: 1px solid #bb4100;
+  border: 1px solid #FF6B09;
 }
 
 .contact {
@@ -2796,10 +2796,10 @@ header .mobile-container {
   outline: 1px solid red;
 }
 .contact input:focus-within {
-  outline: 1px solid #bb4100;
+  outline: 1px solid #FF6B09;
 }
 .contact input:focus-within::placeholder {
-  color: #bb4100;
+  color: #FF6B09;
 }
 .contact input::placeholder {
   font-size: 14px;
@@ -2821,7 +2821,7 @@ header .mobile-container {
 .contact .button {
   display: block;
   padding: 15px 10px;
-  background-color: #bb4100;
+  background-color: #FF6B09;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
@@ -2833,9 +2833,9 @@ header .mobile-container {
   cursor: pointer;
 }
 .contact .button:hover, .contact .button:focus {
-  color: #bb4100;
+  color: #FF6B09;
   background-color: #FFFFFF;
-  border: 1px solid #bb4100;
+  border: 1px solid #FF6B09;
 }
 @media screen and (min-width: 1360px) {
   .contact .button {
@@ -2945,7 +2945,7 @@ header .mobile-container {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  fill: #bb4100;
+  fill: #FF6B09;
   margin-right: 10px;
 }
 @media screen and (min-width: 768px) {
