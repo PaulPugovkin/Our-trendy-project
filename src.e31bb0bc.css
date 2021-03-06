@@ -713,6 +713,7 @@ header .mobile-container {
   margin-right: 40px;
 }
 .decktop-navigation-list a {
+  padding: 20px 0;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -720,6 +721,7 @@ header .mobile-container {
   letter-spacing: 0.03em;
   color: #757575;
   text-transform: uppercase;
+  transition: color 300ms linear;
 }
 .decktop-navigation-list a:hover, .decktop-navigation-list a:focus {
   color: #bb4100;
@@ -740,6 +742,7 @@ header .mobile-container {
   border: 2px solid #bb4100;
   display: none;
   cursor: pointer;
+  transition: color, background-color 500ms linear;
 }
 @media screen and (min-width: 768px) {
   .button-consultation {
@@ -966,7 +969,7 @@ header .mobile-container {
     padding: 40px 0;
   }
 }
-.decktop-consultation-form h1 {
+.decktop-consultation-form h2 {
   margin: 0 auto;
   max-width: 450px;
   text-align: center;
@@ -978,7 +981,7 @@ header .mobile-container {
   text-transform: uppercase;
 }
 @media screen and (min-width: 600px) and (max-width: 767px) {
-  .decktop-consultation-form h1 {
+  .decktop-consultation-form h2 {
     font-weight: 800;
     font-size: 26px;
     line-height: 1.307;
@@ -986,7 +989,7 @@ header .mobile-container {
   }
 }
 @media screen and (min-width: 1360px) {
-  .decktop-consultation-form h1 {
+  .decktop-consultation-form h2 {
     font-weight: 800;
     font-size: 26px;
     line-height: 1.307;
@@ -1250,6 +1253,12 @@ header .mobile-container {
   text-transform: uppercase;
   background-color: #bb4100;
   color: #ffffff;
+  transition: color, background-color 500ms linear;
+}
+.hero .button:hover, .hero .button:focus {
+  color: #bb4100;
+  background-color: #FFFFFF;
+  border: 1px solid #bb4100;
 }
 @media screen and (min-width: 768px) {
   .hero .button {
@@ -2135,6 +2144,7 @@ header .mobile-container {
   }
 }
 .about-teacher button {
+  cursor: pointer;
   background-color: transparent;
   border: none;
   outline: none;
@@ -2819,7 +2829,13 @@ header .mobile-container {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #FFFFFF;
+  transition: color, background-color 500ms linear;
   cursor: pointer;
+}
+.contact .button:hover, .contact .button:focus {
+  color: #bb4100;
+  background-color: #FFFFFF;
+  border: 1px solid #bb4100;
 }
 @media screen and (min-width: 1360px) {
   .contact .button {
