@@ -119,9 +119,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/links-close.js":[function(require,module,exports) {
 var links = document.querySelectorAll('[data-modal-link]');
+var modalsWrappers = document.querySelectorAll('.modal-area-bgd');
+var modalContainers = document.querySelectorAll('.modal-area-content');
 var MODAL_HIDDEN_CLASS = 'is-hidden';
 var BODY_SCROLL_DISABLE_CLASS = 'modal-open';
 var BURGER_VISIBLE = 'is-active';
+enableCloseModalOnBgdClick();
 links.forEach(function (link) {
   link.addEventListener('click', hideModal);
 });
@@ -132,6 +135,22 @@ function hideModal() {
   modalToClose.classList.add(MODAL_HIDDEN_CLASS);
   burger.classList.remove(BURGER_VISIBLE);
   document.body.classList.remove(BODY_SCROLL_DISABLE_CLASS);
+}
+
+function enableCloseModalOnBgdClick() {
+  if (modalContainers.length) {
+    modalContainers.forEach(function (container) {
+      container.addEventListener('click', function (event) {
+        return event.stopPropagation();
+      });
+    });
+  }
+
+  if (modalsWrappers.length) {
+    modalsWrappers.forEach(function (container) {
+      container.addEventListener('click', hideModal);
+    });
+  }
 }
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -161,7 +180,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57804" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58938" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
