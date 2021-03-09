@@ -104,7 +104,7 @@
             padding: 27px 0 27px 40px;
         }
 
-        &:focus-within:required:invalid {
+        &:focus-within:not(:placeholder-shown):required:invalid {
             outline: 1px solid red;
         }
 
@@ -149,8 +149,18 @@
         text-transform: uppercase;
 
         color: #FFFFFF;
+        border: 2px solid transparent;
+
+        transition: color, background-color 250ms linear;
 
         cursor: pointer;
+
+        &:hover,
+        &:focus {
+            color: $bright-color-orange;
+            background-color: #FFFFFF;
+            border: 2px solid $bright-color-orange;
+        }
 
         @media screen and (min-width: $desktop) {
             font-size: 14px;

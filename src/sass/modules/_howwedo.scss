@@ -1,9 +1,10 @@
 .how-we-do {
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 50px;
+  text-align: center;
 
   @media screen and (min-width: $desktop) {
-    padding-top: 130px;
+    padding-top: 65px;
     padding-bottom: 130px;
   }
 }
@@ -22,9 +23,17 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet) and (max-width: 1359px) {
+    margin-top: -27px;
+    margin-left: -20px;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  @media screen and (min-width: $desktop) {
     margin: -10px;
 
     flex-direction: row;
@@ -34,38 +43,18 @@
 }
 
 .how-we-do-item {
+  position: relative;
   margin-top: 15px;
+  padding: 30px 4px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   flex-basis: calc(100% - 15px);
   max-width: 340px;
   height: 280px;
 
-  @media screen and (max-width: 289px) {
-    height: 100%;
-  }
-
-  @media screen and (min-width: $tablet) and (max-width: 1359px) {
-    margin: 10px;
-
-    flex-basis: calc((100% - 2 * 20px) / 2);
-    min-width: 334px;
-    height: 334px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    margin: 10px;
-
-    flex-basis: calc((100% - 2 * 20px) / 3);
-    min-width: 424px;
-    height: 396px;
-  }
-}
-
-.how-we-do-link {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background: linear-gradient(
     to right,
     $bright-color-orange,
@@ -74,32 +63,22 @@
   );
   background-size: 204% 104%;
   background-position: 100%;
-  transition: background-position 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  height: 100%;
-  text-align: center;
+  transition: background-position 300ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.1);
 
-  &:focus,
   &:hover,
-  &:focus .how-we-do-svg,
   &:hover .how-we-do-svg,
-  &:focus .how-we-do-title,
   &:hover .how-we-do-title,
-  &:focus .how-we-do-position::after,
-  &:hover .how-we-do-position::after,
-  &:focus .how-we-do-paragraph,
+  &:hover .how-we-do-title::after,
   &:hover .how-we-do-paragraph {
     fill: $light-color-white;
     color: $light-color-white;
     background-position: 0 100%;
   }
-}
 
-.how-we-do-description-wrapper {
-  padding: 30px 4px 10px;
-  width: 100%;
-  height: 100%;
+  @media screen and (max-width: 289px) {
+    height: 100%;
+  }
 
   @media screen and (min-width: $mobile) and (max-width: 767px) {
     padding: 30px 30px 10px;
@@ -107,21 +86,21 @@
 
   @media screen and (min-width: $tablet) and (max-width: 1359px) {
     padding: 40px 19px 20px;
+    margin-top: 27px;
+    margin-left: 20px;
+
+    flex-basis: calc(100% / 2 - 27px - 20px);
+    min-width: 334px;
+    height: 334px;
   }
 
   @media screen and (min-width: $desktop) {
     padding: 40px 31px 55px;
-  }
-}
+    margin: 10px;
 
-.how-we-do-position {
-  &::after {
-    content: '—';
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 1.65;
-    letter-spacing: 0.08em;
-    color: $bright-color-orange;
+    flex-basis: calc((100% - 2 * 20px) / 3);
+    min-width: 424px;
+    height: 396px;
   }
 }
 
@@ -136,6 +115,21 @@
   font-size: 14px;
   line-height: 1.43;
   color: $dark-color-black;
+
+  &::after {
+    content: '—';
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.65;
+    letter-spacing: 0.08em;
+    color: $bright-color-orange;
+
+    @media screen and (min-width: $tablet) and (max-width: 1359px) {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
 
   @media screen and (min-width: $tablet) and (max-width: 1359px) {
     margin-top: 30px;
@@ -156,10 +150,6 @@
   font-size: 12px;
   line-height: 1.67;
   color: $light-color-gray;
-
-  @media screen and (min-width: $tablet) and (max-width: 1359px) {
-    margin-top: 10px;
-  }
 
   @media screen and (min-width: $desktop) {
     font-size: 18px;
