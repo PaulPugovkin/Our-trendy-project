@@ -189,11 +189,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
         change = to - start,
         currentTime = 0,
         increment = 20;
-    console.log('start:', start); //DEBUG
-
-    console.log('to:', to); //DEBUG
-
-    console.log('change:', change); //DEBUG
 
     var animateScroll = function animateScroll() {
       // increment the time
@@ -285,7 +280,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52334" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57804" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -316,9 +311,8 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else if (location.reload) {
-        // `location` global exists in a web worker context but lacks `.reload()` function.
-        location.reload();
+      } else {
+        window.location.reload();
       }
     }
 

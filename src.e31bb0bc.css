@@ -742,7 +742,7 @@ header .mobile-container {
   border: 2px solid #FF6B09;
   display: none;
   cursor: pointer;
-  transition: color, background-color 500ms linear;
+  transition: color, background-color 250ms linear;
 }
 @media screen and (min-width: 768px) {
   .button-consultation {
@@ -1042,6 +1042,9 @@ header .mobile-container {
   border: 1px solid #FF6B09;
   outline: 0;
 }
+.form-bar .form-input:focus-within:not(:placeholder-shown):required:invalid {
+  border: 1px solid red;
+}
 .form-bar .svg-modal {
   position: absolute;
   top: 50%;
@@ -1114,6 +1117,11 @@ header .mobile-container {
     padding-bottom: 0;
   }
 }
+@media screen and (min-width: 1360px) {
+  .hero-container {
+    display: flex;
+  }
+}
 
 .hero {
   overflow: hidden;
@@ -1141,7 +1149,8 @@ header .mobile-container {
 }
 @media screen and (min-width: 1360px) {
   .hero {
-    padding-bottom: 241px;
+    padding-bottom: 106px;
+    min-height: 850px;
     background-image: url(/vector.2a6df762.png);
     background-position: center bottom 45px;
   }
@@ -1160,7 +1169,7 @@ header .mobile-container {
 }
 @media screen and (min-width: 1360px) {
   .hero-wrap {
-    width: 642px;
+    min-width: 642px;
     padding-top: 80px;
     padding-right: 0;
   }
@@ -1229,9 +1238,9 @@ header .mobile-container {
 }
 @media screen and (min-width: 1360px) {
   .hero-photo {
-    max-width: 842px;
-    right: -105px;
-    bottom: -156px;
+    position: relative;
+    min-width: 842px;
+    left: -30px;
   }
 }
 
@@ -1253,12 +1262,13 @@ header .mobile-container {
   text-transform: uppercase;
   background-color: #FF6B09;
   color: #ffffff;
-  transition: color, background-color 500ms linear;
+  border: 2px solid transparent;
+  transition: color, background-color 250ms linear;
 }
 .hero .button:hover, .hero .button:focus {
   color: #FF6B09;
-  background-color: #FFFFFF;
-  border: 1px solid #FF6B09;
+  background-color: #ffffff;
+  border: 2px solid #FF6B09;
 }
 @media screen and (min-width: 768px) {
   .hero .button {
@@ -1349,20 +1359,22 @@ header .mobile-container {
 .problems {
   position: relative;
   padding-top: 50px;
-  background-image: linear-gradient(to bottom, #111518 79%, #111518 79%, #ffffff 21%, #ffffff 21%);
+  padding-bottom: 20px;
+  background-image: linear-gradient(to bottom, #111518 76%, #111518 76%, #ffffff 24%, #ffffff 24%);
 }
 @media screen and (min-width: 768px) and (max-width: 1359px) {
   .problems {
     padding-top: 60px;
-    background-image: linear-gradient(to bottom, #111518 70%, #111518 70%, #ffffff 30%, #ffffff 30%);
+    background-image: linear-gradient(to bottom, #111518 66%, #111518 66%, #ffffff 34%, #ffffff 34%);
   }
 }
 @media screen and (min-width: 1360px) {
   .problems {
     padding-top: 100px;
-    background-image: url(/fire.d8ba45d4.svg), linear-gradient(to bottom, #111518 79%, #111518 79%, #ffffff 21%, #ffffff 21%);
+    padding-bottom: 65px;
+    background-image: url(/fire.d8ba45d4.svg), linear-gradient(to bottom, #111518 72%, #111518 72%, #ffffff 28%, #ffffff 28%);
     background-repeat: no-repeat;
-    background-position: right -45px bottom 149px, center;
+    background-position: right -45px bottom 214px, center;
   }
 }
 
@@ -1444,15 +1456,20 @@ header .mobile-container {
 
 .problems-item {
   counter-increment: steps;
+  display: flex;
+  flex-direction: column;
   font-weight: 700;
   line-height: 1.43;
 }
 .problems-item::before {
-  content: "—";
-  display: inline-flex;
-  font-size: 18px;
-  line-height: 1.2;
+  content: "— " "0" counter(steps);
   color: #FF6B09;
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 1360px) {
+  .problems-item::before {
+    margin-bottom: 10px;
+  }
 }
 @media screen and (max-width: 767px) {
   .problems-item {
@@ -1478,27 +1495,6 @@ header .mobile-container {
     font-size: 20px;
     line-height: 1.4;
   }
-  .problems-item::before {
-    content: "—";
-    font-size: 20px;
-    line-height: 1.65;
-  }
-}
-
-.problems-item-count::before {
-  content: "0" counter(steps);
-  display: inline-flex;
-  color: #FF6B09;
-}
-
-.problems-item-text {
-  margin-top: 5px;
-  display: block;
-}
-@media screen and (min-width: 1360px) {
-  .problems-item-text {
-    margin-top: 10px;
-  }
 }
 
 .problems-item-width {
@@ -1506,12 +1502,13 @@ header .mobile-container {
 }
 
 .how-we-do {
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 50px;
+  text-align: center;
 }
 @media screen and (min-width: 1360px) {
   .how-we-do {
-    padding-top: 130px;
+    padding-top: 65px;
     padding-bottom: 130px;
   }
 }
@@ -1530,9 +1527,17 @@ header .mobile-container {
   margin-top: -15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1359px) {
+  .how-we-do-items-wrapper {
+    margin-top: -27px;
+    margin-left: -20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+}
+@media screen and (min-width: 1360px) {
   .how-we-do-items-wrapper {
     margin: -10px;
     flex-direction: row;
@@ -1542,81 +1547,54 @@ header .mobile-container {
 }
 
 .how-we-do-item {
+  position: relative;
   margin-top: 15px;
+  padding: 30px 4px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-basis: calc(100% - 15px);
   max-width: 340px;
   height: 280px;
+  background: linear-gradient(to right, #FF6B09, #FF6B09 50%, #ffffff 50%);
+  background-size: 204% 104%;
+  background-position: 100%;
+  transition: background-position 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.1);
+}
+.how-we-do-item:hover, .how-we-do-item:hover .how-we-do-svg, .how-we-do-item:hover .how-we-do-title, .how-we-do-item:hover .how-we-do-title::after, .how-we-do-item:hover .how-we-do-paragraph {
+  fill: #ffffff;
+  color: #ffffff;
+  background-position: 0 100%;
 }
 @media screen and (max-width: 289px) {
   .how-we-do-item {
     height: 100%;
   }
 }
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .how-we-do-item {
+    padding: 30px 30px 10px;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 1359px) {
   .how-we-do-item {
-    margin: 10px;
-    flex-basis: calc((100% - 2 * 20px) / 2);
+    padding: 40px 19px 20px;
+    margin-top: 27px;
+    margin-left: 20px;
+    flex-basis: calc(100% / 2 - 27px - 20px);
     min-width: 334px;
     height: 334px;
   }
 }
 @media screen and (min-width: 1360px) {
   .how-we-do-item {
+    padding: 40px 31px 55px;
     margin: 10px;
     flex-basis: calc((100% - 2 * 20px) / 3);
     min-width: 424px;
     height: 396px;
   }
-}
-
-.how-we-do-link {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: linear-gradient(to right, #FF6B09, #FF6B09 50%, #ffffff 50%);
-  background-size: 204% 104%;
-  background-position: 100%;
-  transition: background-position 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.1);
-}
-.how-we-do-link:focus, .how-we-do-link:hover, .how-we-do-link:focus .how-we-do-svg, .how-we-do-link:hover .how-we-do-svg, .how-we-do-link:focus .how-we-do-title, .how-we-do-link:hover .how-we-do-title, .how-we-do-link:focus .how-we-do-position::after, .how-we-do-link:hover .how-we-do-position::after, .how-we-do-link:focus .how-we-do-paragraph, .how-we-do-link:hover .how-we-do-paragraph {
-  fill: #ffffff;
-  color: #ffffff;
-  background-position: 0 100%;
-}
-
-.how-we-do-description-wrapper {
-  padding: 30px 4px 10px;
-  width: 100%;
-  height: 100%;
-}
-@media screen and (min-width: 480px) and (max-width: 767px) {
-  .how-we-do-description-wrapper {
-    padding: 30px 30px 10px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1359px) {
-  .how-we-do-description-wrapper {
-    padding: 40px 19px 20px;
-  }
-}
-@media screen and (min-width: 1360px) {
-  .how-we-do-description-wrapper {
-    padding: 40px 31px 55px;
-  }
-}
-
-.how-we-do-position::after {
-  content: "—";
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.65;
-  letter-spacing: 0.08em;
-  color: #FF6B09;
 }
 
 .how-we-do-svg {
@@ -1629,6 +1607,21 @@ header .mobile-container {
   font-size: 14px;
   line-height: 1.43;
   color: #111518;
+}
+.how-we-do-title::after {
+  content: "—";
+  display: block;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.65;
+  letter-spacing: 0.08em;
+  color: #FF6B09;
+}
+@media screen and (min-width: 768px) and (max-width: 1359px) {
+  .how-we-do-title::after {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1359px) {
   .how-we-do-title {
@@ -1651,11 +1644,6 @@ header .mobile-container {
   line-height: 1.67;
   color: #757575;
 }
-@media screen and (min-width: 768px) and (max-width: 1359px) {
-  .how-we-do-paragraph {
-    margin-top: 10px;
-  }
-}
 @media screen and (min-width: 1360px) {
   .how-we-do-paragraph {
     font-size: 18px;
@@ -1677,6 +1665,7 @@ header .mobile-container {
 
 .program-section {
   background-color: #111518;
+  overflow: unset;
 }
 @media screen and (min-width: 768px) {
   .program-section.wrap {
@@ -2792,7 +2781,7 @@ header .mobile-container {
     padding: 27px 0 27px 40px;
   }
 }
-.contact input:focus-within:required:invalid {
+.contact input:focus-within:not(:placeholder-shown):required:invalid {
   outline: 1px solid red;
 }
 .contact input:focus-within {
@@ -2829,13 +2818,14 @@ header .mobile-container {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #FFFFFF;
-  transition: color, background-color 500ms linear;
+  border: 2px solid transparent;
+  transition: color, background-color 250ms linear;
   cursor: pointer;
 }
 .contact .button:hover, .contact .button:focus {
   color: #FF6B09;
   background-color: #FFFFFF;
-  border: 1px solid #FF6B09;
+  border: 2px solid #FF6B09;
 }
 @media screen and (min-width: 1360px) {
   .contact .button {
@@ -2979,7 +2969,7 @@ header .mobile-container {
   background-color: #111518;
   padding: 22px 0;
 }
-.copyright h2 {
+.copyright p {
   font-weight: 500;
   font-size: 14px;
   line-height: 28px;
@@ -2987,7 +2977,7 @@ header .mobile-container {
   text-align: center;
 }
 @media screen and (min-width: 768px) {
-  .copyright h2 {
+  .copyright p {
     text-align: left;
   }
 }
@@ -3000,7 +2990,7 @@ header .mobile-container {
  */
 .hamburger {
   z-index: 20;
-  padding: 15px 15px;
+  padding: 5px 5px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
