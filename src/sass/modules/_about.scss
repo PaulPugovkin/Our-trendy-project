@@ -214,9 +214,9 @@
 .certificate-modal {
   position: relative;
   margin-top: 10vh;
-
+  margin-bottom: 10vh;
   width: 80%;
-  height: auto;
+  height: fit-content;
 
   @media screen and (min-width: $tablet) {
     width: 400px;
