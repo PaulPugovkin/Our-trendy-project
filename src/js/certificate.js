@@ -15,6 +15,13 @@ function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
 }
 
+enableButtonModalOnBgdClick();
+
+function enableButtonModalOnBgdClick() {
+    document.body.classList.remove('certificate-open');
+  refs.modal.classList.add('is-hidden');
+};
+
 enableCloseModalOnBgdClick();
 
 function enableCloseModalOnBgdClick() {
@@ -26,7 +33,7 @@ function enableCloseModalOnBgdClick() {
 
   if (modalsWrappers.length) {
     modalsWrappers.forEach(container => {
-      container.addEventListener('click', toggleModal);
+      container.addEventListener('click', enableButtonModalOnBgdClick);
     });
   }
 }
